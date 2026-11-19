@@ -7,14 +7,52 @@
         WindowStartupLocation="CenterScreen"
         x:Class="okno.MainWindow"
         Title="Cat of many names"
-        Background="#F5F0E6">
+        RequestedThemeVariant="Default"
+        Background="{DynamicResource WindowBgBrush}">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <!-- Motyw jasny (Light) bazowany na 4 barwach -->
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="WindowBgBrush" Color="#F5F0E6" />
+                    <SolidColorBrush x:Key="BannerBgBrush" Color="#7F8C6A" />
+                    <SolidColorBrush x:Key="BannerTextBrush" Color="#1E3B2F" />
+                    <SolidColorBrush x:Key="H1Brush" Color="#1E3B2F" />
+                    <SolidColorBrush x:Key="H2Brush" Color="#7F8C6A" />
+                    <SolidColorBrush x:Key="BodyTextBrush" Color="#1E3B2F" />
+                    <SolidColorBrush x:Key="CardBgBrush" Color="#FFFFFF" />
+                    <SolidColorBrush x:Key="CardBorderBrush" Color="#C8B48A" />
+                    <SolidColorBrush x:Key="FooterBgBrush" Color="#F5F0E6" />
+                    <SolidColorBrush x:Key="FooterBorderBrush" Color="#C8B48A" />
+                    <SolidColorBrush x:Key="FooterTextBrush" Color="#7F8C6A" />
+                </ResourceDictionary>
+
+                <!-- Opcjonalny motyw ciemny (Dark) o podobnych ale znacznie ciemniejszych barwach -->
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="WindowBgBrush" Color="#0E1813" />
+                    <SolidColorBrush x:Key="BannerBgBrush" Color="#1A2E24" />
+                    <SolidColorBrush x:Key="BannerTextBrush" Color="#8FA37E" />
+                    <SolidColorBrush x:Key="H1Brush" Color="#F5F0E6" />
+                    <SolidColorBrush x:Key="H2Brush" Color="#C8B48A" />
+                    <SolidColorBrush x:Key="BodyTextBrush" Color="#E0D8CB" />
+                    <SolidColorBrush x:Key="CardBgBrush" Color="#15231C" />
+                    <SolidColorBrush x:Key="CardBorderBrush" Color="#5A503C" />
+                    <SolidColorBrush x:Key="FooterBgBrush" Color="#0A130F" />
+                    <SolidColorBrush x:Key="FooterBorderBrush" Color="#28362D" />
+                    <SolidColorBrush x:Key="FooterTextBrush" Color="#7F8C6A" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid RowDefinitions="Auto, *, Auto">
-        <!-- Baner na samej górze ekranu: tło szałwiowe (#7F8C6A), tekst w ciemniejszej leśnej zieleni (#1E3B2F) -->
+        <!-- Baner na samej górze ekranu -->
         <Border Grid.Row="0"
-                Background="#7F8C6A"
+                Background="{DynamicResource BannerBgBrush}"
                 Padding="16,12">
             <TextBlock Text="cats of the wild"
-                       Foreground="#1E3B2F"
+                       Foreground="{DynamicResource BannerTextBrush}"
                        FontSize="16"
                        FontWeight="Medium"
                        HorizontalAlignment="Left"
@@ -27,44 +65,44 @@
                 <TextBlock Text="Puma concolor"
                            FontSize="32"
                            FontWeight="Bold"
-                           Foreground="#1E3B2F"
+                           Foreground="{DynamicResource H1Brush}"
                            HorizontalAlignment="Center" />
                 <TextBlock Text="Cat of many names"
                            FontSize="22"
                            FontWeight="SemiBold"
-                           Foreground="#7F8C6A"
+                           Foreground="{DynamicResource H2Brush}"
                            HorizontalAlignment="Center" />
                 <TextBlock Text="The puma (Puma concolor) holds a record for having over 40 English names—and over 200 names globally—because of its massive geographic range across the Americas. Here are the best known few:"
                            FontSize="15"
-                           Foreground="#1E3B2F"
+                           Foreground="{DynamicResource BodyTextBrush}"
                            TextWrapping="Wrap"
                            Margin="0,6,0,6" />
 
-                <!-- Karta z listą nazw: ciepła piaskowa ramka (#C8B48A) -->
-                <Border Background="#FFFFFF"
-                        BorderBrush="#C8B48A"
+                <!-- Karta z listą nazw -->
+                <Border Background="{DynamicResource CardBgBrush}"
+                        BorderBrush="{DynamicResource CardBorderBrush}"
                         BorderThickness="1.5"
                         CornerRadius="10"
                         Padding="18,14">
                     <StackPanel Spacing="10">
                         <TextBlock Text="• Puma (widely used in Latin America, Europe, and scientific literature)"
-                                   Foreground="#1E3B2F"
+                                   Foreground="{DynamicResource BodyTextBrush}"
                                    TextWrapping="Wrap"
                                    FontSize="14" />
                         <TextBlock Text="• Mountain lion (commonly used in the western and general United States)"
-                                   Foreground="#1E3B2F"
+                                   Foreground="{DynamicResource BodyTextBrush}"
                                    TextWrapping="Wrap"
                                    FontSize="14" />
                         <TextBlock Text="• Cougar (commonly used in Canada and parts of North America)"
-                                   Foreground="#1E3B2F"
+                                   Foreground="{DynamicResource BodyTextBrush}"
                                    TextWrapping="Wrap"
                                    FontSize="14" />
                         <TextBlock Text="• Catamount / Cat-o'-mountain (shortened from &quot;cat of the mountain,&quot; used in New England and historically)"
-                                   Foreground="#1E3B2F"
+                                   Foreground="{DynamicResource BodyTextBrush}"
                                    TextWrapping="Wrap"
                                    FontSize="14" />
                         <TextBlock Text="• Panther / Florida panther (especially used in Florida and the southeastern U.S.)"
-                                   Foreground="#1E3B2F"
+                                   Foreground="{DynamicResource BodyTextBrush}"
                                    TextWrapping="Wrap"
                                    FontSize="14" />
                     </StackPanel>
@@ -74,14 +112,14 @@
 
         <!-- Stopka (footer) na dole ekranu -->
         <Border Grid.Row="2"
-                Background="#F5F0E6"
-                BorderBrush="#C8B48A"
+                Background="{DynamicResource FooterBgBrush}"
+                BorderBrush="{DynamicResource FooterBorderBrush}"
                 BorderThickness="0,1,0,0"
                 Padding="14,10">
             <TextBlock Text="Information is taken from the official English Wikipedia page for Puma concolor."
                        FontSize="12"
                        FontStyle="Italic"
-                       Foreground="#7F8C6A"
+                       Foreground="{DynamicResource FooterTextBrush}"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center" />
         </Border>
