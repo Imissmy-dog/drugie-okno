@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:imaging="clr-namespace:Avalonia.Media.Imaging;assembly=Avalonia.Base"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="650"
         Width="750" Height="620"
         WindowStartupLocation="CenterScreen"
@@ -26,6 +27,8 @@
                     <SolidColorBrush x:Key="FooterBgBrush" Color="#F5F0E6" />
                     <SolidColorBrush x:Key="FooterBorderBrush" Color="#C8B48A" />
                     <SolidColorBrush x:Key="FooterTextBrush" Color="#7F8C6A" />
+                    <!-- Zdjęcie dla motywu jasnego -->
+                    <imaging:Bitmap x:Key="PumaPhoto">avares://okno/pumadaytime.jpg</imaging:Bitmap>
                 </ResourceDictionary>
 
                 <!-- Opcjonalny motyw ciemny (Dark) o podobnych ale znacznie ciemniejszych barwach -->
@@ -41,6 +44,8 @@
                     <SolidColorBrush x:Key="FooterBgBrush" Color="#0A130F" />
                     <SolidColorBrush x:Key="FooterBorderBrush" Color="#223328" />
                     <SolidColorBrush x:Key="FooterTextBrush" Color="#7F8C6A" />
+                    <!-- Zdjęcie dla motywu ciemnego -->
+                    <imaging:Bitmap x:Key="PumaPhoto">avares://okno/pumanighttime.jpg</imaging:Bitmap>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>
@@ -108,11 +113,11 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Zdjęcie pumy pod całym tekstem -->
+                <!-- Zdjęcie pumy pod całym tekstem (automatycznie dopasowane do motywu jasnego/ciemnego) -->
                 <Border CornerRadius="10"
                         ClipToBounds="True"
                         Margin="0,10,0,10">
-                    <Image Source="avares://okno/pumadaytime.jpg"
+                    <Image Source="{DynamicResource PumaPhoto}"
                            MaxWidth="680"
                            MaxHeight="380"
                            Stretch="Uniform" />
