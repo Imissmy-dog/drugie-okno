@@ -7,27 +7,41 @@
         WindowStartupLocation="CenterScreen"
         x:Class="okno.MainWindow"
         Title="Cat of many names">
-    <ScrollViewer Margin="20">
-        <StackPanel Spacing="12" MaxWidth="680" HorizontalAlignment="Center">
-            <TextBlock Text="Puma concolor"
-                       FontSize="32"
-                       FontWeight="Bold"
-                       HorizontalAlignment="Center" />
-            <TextBlock Text="Cat of many names"
-                       FontSize="24"
-                       FontWeight="SemiBold"
-                       HorizontalAlignment="Center" />
-            <TextBlock Text="The puma (Puma concolor) holds a record for having over 40 English names—and over 200 names globally—because of its massive geographic range across the Americas. Here are the best known few:"
-                       FontSize="15"
-                       TextWrapping="Wrap"
-                       Margin="0,10,0,5" />
-            <StackPanel Spacing="8" Margin="10,0,0,0">
-                <TextBlock Text="• Puma (widely used in Latin America, Europe, and scientific literature)" TextWrapping="Wrap" FontSize="14" />
-                <TextBlock Text="• Mountain lion (commonly used in the western and general United States)" TextWrapping="Wrap" FontSize="14" />
-                <TextBlock Text="• Cougar (commonly used in Canada and parts of North America)" TextWrapping="Wrap" FontSize="14" />
-                <TextBlock Text="• Catamount / Cat-o'-mountain (shortened from &quot;cat of the mountain,&quot; used in New England and historically)" TextWrapping="Wrap" FontSize="14" />
-                <TextBlock Text="• Panther / Florida panther (especially used in Florida and the southeastern U.S.)" TextWrapping="Wrap" FontSize="14" />
+    <Grid RowDefinitions="Auto, *">
+        <!-- Baner na samej górze ekranu -->
+        <Border Grid.Row="0"
+                Background="#EADBBE"
+                Padding="12,10">
+            <TextBlock Text="cats of the wild"
+                       Foreground="#8B6C3E"
+                       FontSize="16"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" />
+        </Border>
+
+        <!-- Główna zawartość okna -->
+        <ScrollViewer Grid.Row="1" Margin="20">
+            <StackPanel Spacing="12" MaxWidth="680" HorizontalAlignment="Center">
+                <TextBlock Text="Puma concolor"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center" />
+                <TextBlock Text="Cat of many names"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           HorizontalAlignment="Center" />
+                <TextBlock Text="The puma (Puma concolor) holds a record for having over 40 English names—and over 200 names globally—because of its massive geographic range across the Americas. Here are the best known few:"
+                           FontSize="15"
+                           TextWrapping="Wrap"
+                           Margin="0,10,0,5" />
+                <StackPanel Spacing="8" Margin="10,0,0,0">
+                    <TextBlock Text="• Puma (widely used in Latin America, Europe, and scientific literature)" TextWrapping="Wrap" FontSize="14" />
+                    <TextBlock Text="• Mountain lion (commonly used in the western and general United States)" TextWrapping="Wrap" FontSize="14" />
+                    <TextBlock Text="• Cougar (commonly used in Canada and parts of North America)" TextWrapping="Wrap" FontSize="14" />
+                    <TextBlock Text="• Catamount / Cat-o'-mountain (shortened from &quot;cat of the mountain,&quot; used in New England and historically)" TextWrapping="Wrap" FontSize="14" />
+                    <TextBlock Text="• Panther / Florida panther (especially used in Florida and the southeastern U.S.)" TextWrapping="Wrap" FontSize="14" />
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-    </ScrollViewer>
+        </ScrollViewer>
+    </Grid>
 </Window>
