@@ -5,8 +5,16 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="okno.MainWindow"
         Title="okno">
-    <TextBlock Text="Puma concolor"
-               FontSize="32"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center" />
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Spacing="10">
+        <TextBlock Text="Puma concolor"
+                   FontSize="32"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center" />
+        <TextBlock Text="Cat of many names"
+                   FontSize="24"
+                   FontWeight="SemiBold"
+                   HorizontalAlignment="Center" />
+    </StackPanel>
 </Window>
